@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addUploadedVideo } from "../redux/slices/VedioSlice";
 
-const CLIENT_ID = "480405925435-l9kfg0t0fd1kpfcpk3prr66dav8i8ni8.apps.googleusercontent.com";
+const CLIENT_ID = process.env.REACT_APP_YOUTUBE_API_CLIENT_KEY;
 const SCOPES = "https://www.googleapis.com/auth/youtube.upload";
 
 //Social Media Publishing Part. Implemented YouTube Shorts publishing functionality.
