@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './auth/Login';
+import PrivateRoute from './auth/PrivateRoute';
+import Layout from './components/Layout';
+import Dashboard from './components/Dashboard';
+import VideoGenerator from './components/VideoGenerator';
+import VideoUpload from './components/VideoUpload';
+import useFirebaseAuthWatcher from './hooks/useFirebaseAuthWatcher';
 function App() {
+  useFirebaseAuthWatcher(); //  auto-logout functionality
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<PrivateRoute><Layout /></PrivateRoute>}>
+          <Route index element={<Dashboard />} />
+          <Route path="generate" element={<VideoGenerator />} />
+          <Route path="upload" element={<VideoUpload />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
