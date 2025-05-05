@@ -1,5 +1,7 @@
 # 🎬 Video Content AI Generator
 
+phone:9999999999
+otp:123456 for login 
 A powerful React-based application that helps users generate video content ideas using AI, create videos with Canva, and upload them to YouTube — all with seamless login, user experience, and full automation support.
 
 ---
