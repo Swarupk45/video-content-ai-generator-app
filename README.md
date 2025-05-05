@@ -10,7 +10,7 @@ A powerful React-based application that helps users generate video content ideas
 phone:9999999999
 otp:123456 for login.
 
-👉 [Live Application](https://your-deployed-url.com)
+👉 https://ai-content-generator-assignment.netlify.app/
 
 ---
 
